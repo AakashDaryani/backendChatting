@@ -4,7 +4,14 @@ const PORT = process.env.PORT || 5000;
 const mongoose = require('mongoose');
 
 app.use(express.json());
-mongoose.connect('mongodb://127.0.0.1:27017/storeMessgae');
+mongoose.connect('mongodb://127.0.0.1:27017/storeMessgae')
+  .then(() => {
+    console.log('MongoDB connected');
+  })
+  .catch(error => {
+    console.error('MongoDB connection error:', error);
+  });
+
 const messageSchema = new mongoose.Schema({
   message: String,
   username: String
