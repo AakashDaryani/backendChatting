@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 5000;
 const mongoose = require('mongoose');
 
 app.use(express.json());
-mongoose.connect('mongodb://127.0.0.1:27017/storeMessgae')
+mongoose.connect('mongodb://127.0.0.1:27017/storeMessgae',{useNewUrlParser:true})
   .then(() => {
     console.log('MongoDB connected');
   })
