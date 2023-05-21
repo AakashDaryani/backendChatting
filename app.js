@@ -38,6 +38,9 @@ const getMessages = async () =>{
   console.log('data=>',data);
   return data;
 }
+app.get("/",(req,res)=>{
+  res.send("hello world")
+})
 
 app.post("/storeMessage", (req, res) => {
   console.log('Message Recived');
