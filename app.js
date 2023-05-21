@@ -2,9 +2,9 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 5000;
 const mongoose = require('mongoose');
-
+const url = 'mongodb+srv://aakashdaryani50:D8UJ2sSIv3skUoBM@cluster0.92onfj6.mongodb.net/test'
 app.use(express.json());
-mongoose.connect('mongodb://127.0.0.1:27017/storeMessgae',{ useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(url,{ useNewUrlParser: true, useUnifiedTopology: true})
   .then(() => {
     console.log('MongoDB connected');
   })
@@ -56,5 +56,5 @@ app.get('/queryMessage', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log('Server Start');
+  console.log('Server Start'+PORT);
 })
